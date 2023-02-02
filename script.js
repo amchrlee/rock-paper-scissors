@@ -3,52 +3,81 @@ const choices = [
     "paper", 
     "scissors"
 ];
-const resultsMessageDiv = document.querySelector('.message');
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
-};    
+};
 
 function capitalizeFirstLetter(str) {
     const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
     return capitalized;
-}
+};
 
-function game(event) {
+function playRound(event) {
     let playerSelection = event.target.value;
     let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-};    
+    getWinnerOfRound(playerSelection, computerSelection);
+};  
 
-function clearResultsMessage() {
+const resultsMessageDiv = document.querySelector('.end-round-message');
+
+function resetResultsMessage(resultsMessage) {
     resultsMessageDiv.innerHTML = '';
-}
-
-function addResultsMessage(resultsMessage) {
     resultsMessageDiv.appendChild(resultsMessage);
-}
+};
 
-function playRound(playerSelection, computerSelection) {
+let playerScore = 0;
+let computerScore = 0;
+
+function updateScore() {
+    const playerScoreDiv = document.querySelector('#player-score');
+    const computerScoreDiv = document.querySelector('#computer-score');
+    playerScoreDiv.textContent = `${playerScore}`;
+    computerScoreDiv.textContent = `${computerScore}`;
+};
+
+function getWinnerOfRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {    // tie
         let resultsMessage = document.createTextNode("It's a tie! You both chose " + playerSelection + ".");
-        clearResultsMessage();
-        addResultsMessage(resultsMessage);
+        resetResultsMessage(resultsMessage);
+
     } else if (     // loser
         (playerSelection == "rock" && computerSelection == "paper") || 
         (playerSelection == "paper" && computerSelection == "scissors") || 
         (playerSelection == "scissors" && computerSelection == "rock")) {
         let resultsMessage = document.createTextNode("You lose! " + capitalizeFirstLetter(computerSelection) + " beats " + playerSelection + ".");
-        clearResultsMessage();
-        addResultsMessage(resultsMessage);
+        resetResultsMessage(resultsMessage);
+        computerScore++;
+        
     } else {    // winner
         let resultsMessage = document.createTextNode("You win! " + capitalizeFirstLetter(playerSelection) + " beats " + computerSelection + ".");
-        clearResultsMessage();
-        addResultsMessage(resultsMessage);
+        resetResultsMessage(resultsMessage);
+        playerScore++;
     }
 };
 
+const endGameMessageDiv = document.querySelector('.end-game-message');
 const btns = document.querySelectorAll('button');
+const disableButtons = () => {
+    btns.disabled = true;
+};
+
+function getWinnerOfGame () {
+    if (playerScore === 5) {
+        endGameMessageDiv.textContent = `CONGRATULATIONS! You win the game! Please refresh the page to play again.`;
+        btns.addEventListener('click', disableButtons);
+    } else if (computerScore === 5) {
+        endGameMessageDiv.textContent = `GAME OVER. You lose the game. Please refresh the page to play again.`;
+        btns.addEventListener('click', disableButtons);
+    }
+};
 
 btns.forEach((button) => {
-    button.addEventListener('click', game);
+    button.addEventListener('click', (event) => {
+        if (playerScore !== 5 && computerScore !== 5) {
+            playRound(event);
+            updateScore();
+            getWinnerOfGame();
+        };
+    });
 });
