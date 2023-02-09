@@ -5,27 +5,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock Paper Scissors</title>
         <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="banner">Rock, Paper, Scissors!</div>
+        <h1 class="banner">Knight, Princess, Dragon!</h1>
 
-        <div class="end-round-message"></div>
-        <div class="end-game-message"></div>
+        <div class="intro">It's a classic fairy tale story - the princess has been captured by vagrants, and a dragon is placed outside to guard her tower to prevent her escape. But alas! A valiant knight has stepped up to take on the quest of saving the princess. Will the dragon hurt the princess before the knight comes to her rescue? Will the knight defeat the dragon and set the princess free? Will the princess cause the knight to fall in love?</div>
 
-        <button id="rock" value="rock">Rock</button>
-        <button id="paper" value="paper">Paper</button>
-        <button id="scissors" value="scissors">Scissors</button>
+        <div class="end-game-message">CHOOSE YOUR CHARACTER and see how the story ends! Whoever reaches 5 favorable outcomes FIRST wins the game!</div>
 
         <div class="score">
             <div class="player">
                 <div class="score-title">PLAYER</div>
                 <div class="score-points" id = "player-score">0</div>
             </div>
+
+            <div class="castle-container">
+                <img src="/images/castle.jpg" class="castle">
+                <div class="credit"><a href="https://www.freepik.com/free-vector/castle-palace-cartoon-icon-illustration_10340625.htm#query=castle&position=14&from_view=author">Image by catalyststuff</a> on Freepik</div>
+            </div>
+
             <div class="computer">
                 <div class="score-title">COMPUTER</div>
                 <div class="score-points" id = "computer-score">0</div>
             </div>
+        </div>
+
+        <div class="end-round-message"></div>
+
+        <div class="button-row">
+            <div class="knight">
+                <button id="knight" value="knight"></button>
+                <div class="button-text">Knight</div>
+                <div class="credit"><a href="https://www.freepik.com/free-vector/cute-shiba-inu-dog-knight-viking-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_20830243.htm#query=knight&position=8&from_view=author">Image by catalyststuff</a> on Freepik</div>
+            </div>
+            <div class="princess">
+                <button id="princess" value="princess"></button>
+                <div class="button-text">Princess</div>
+                <div class="credit"><a href="https://www.freepik.com/free-vector/cute-shiba-inu-dog-queen-with-crown-cartoon-vector-icon-illustration-animal-holiday-icon-isolated_35978924.htm#query=princess&position=21&from_view=author">Image by catalyststuff</a> on Freepik</div>
+            </div>
+            <div class="dragon">
+                <button id="dragon" value="dragon"></button>
+                <div class="button-text">Dragon</div>
+                <div class="credit"><a href="https://www.freepik.com/free-vector/cute-shiba-inu-dog-wearing-dragon-costume-cartoon-vector-icon-illustration-animal-holiday-isolated_36754275.htm#query=dragon&position=37&from_view=author">Image by catalyststuff</a> on Freepik</div>
+            </div>
+            <!-- <div class="computer-choice">
+                <div id="computer-choice-KPD"></div>
+            </div> -->
         </div>
 
     </body>
