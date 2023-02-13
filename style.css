@@ -11,7 +11,11 @@ html {
 }
 
 .banner,
+.intro,
+.player,
 .castle-container,
+.computer,
+.end-round-message,
 .knight,
 .princess,
 .dragon {
@@ -19,7 +23,6 @@ html {
 }
 
 .intro {
-    text-align: center;
     padding: 10px;
 }
 
@@ -32,7 +35,6 @@ html {
 }
 
 .player, .computer {
-    text-align: center;
     min-width: 200px;
 }
 
@@ -42,7 +44,6 @@ html {
 }
 
 .end-round-message {
-    text-align: center;
     font-weight: 600;
     max-width: 55ch;
     padding: 15px;

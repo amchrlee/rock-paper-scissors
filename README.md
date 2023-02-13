@@ -6,7 +6,7 @@ The project was referenced from The Odin Project Foundations curriculum: [Part 1
 
 ## Live Demo
 
-Preview :link:
+Preview :link: https://amchrlee.github.io/rock-paper-scissors/
 
 ## How to Play
 
@@ -35,5 +35,6 @@ In process -- Although the functionality of the game is working correctly, some 
 * Using the DOM to manipulate elements and styles
 * Implementing event listeners to listen and respond to user actions
 * Applying knowledge of JavaScript fundamentals to code a working game
-* Refactoring code and breaking down larger portiosn of the program into smaller functions
+* Refactoring code and breaking down larger portions of the program into smaller functions
+* Adding media queries to accommodate a wider variety of screen sizes
 * Using programming best practices to improve code structure and readability
