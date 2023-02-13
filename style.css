@@ -10,21 +10,16 @@ html {
     font-size: 62.5%;
 }
 
-.banner {
+.banner,
+.castle-container,
+.knight,
+.princess,
+.dragon {
     text-align: center;
-    font-size: 5rem;
-    padding: none;
 }
 
 .intro {
     text-align: center;
-    font-size: 1.8rem;
-    padding: 10px;
-}
-
-.end-game-message {
-    text-align: center;
-    font-size: 1.8rem;
     padding: 10px;
 }
 
@@ -32,77 +27,193 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
+    gap: 2vw 2vh;
     padding: 15px;
 }
 
 .player, .computer {
     text-align: center;
-    min-width: 260px;
-    padding: none;
-}
-
-.score-title {
-    font-size: 3rem;
-}
-
-.score-points {
-    font-size: 2.8rem;
-}
-
-.castle-container {
-    text-align: center;
+    min-width: 200px;
 }
 
 .castle {
-    width: 30vh;
+    max-height: 30vh;
+    height: auto;
 }
 
 .end-round-message {
-
     text-align: center;
-    font-size: 1.8rem;
     font-weight: 600;
     max-width: 55ch;
     padding: 15px;
-    margin: 15px auto;
+    margin: 0 auto 15px auto;
     border-style: double;
 }
 
 .button-row {
     display: flex;
     justify-content: center;
-    gap: 30px;
-}
-
-button {
-    background-size: cover;
-    width: 125px;
-    height: 125px;
-    border: none;
-    box-shadow: 0 8px 16px 0 #1e98bd;
-}
-
-.button-text {
-    font-size: 1.5rem;
-}
-
-.credit {
-    font-size: 0.5rem;
+    gap: 5vw;
+    flex-wrap: wrap;
 }
 
 #knight {
-    background-image: url(/images/knight.jpg);
+    background-image: url(images/knight.jpg);
 }
 
 #princess {
-    background-image: url(/images/princess.jpg);
+    background-image: url(images/princess.jpg);
 }
 
 #dragon {
-    background-image: url(/images/dragon-dog.jpg);
+    background-image: url(images/dragon-dog.jpg);
 }
 
-.knight, .princess, .dragon {
-    text-align: center;
+@media (max-width: 674px) {
+    .banner {
+        font-size: 3.7rem;
+    }
+    .intro {
+        font-size: 1.4rem;
+    }
+    .end-game-message {
+        font-size: 1.4rem;
+    }
+    .score {
+        display: flex;
+        flex-direction: column;
+    }
+    .castle-container {
+        order: 1;
+    }
+    .player {
+        order: 2;
+    }
+    .computer {
+        order: 3;
+    }
+    .score-title {
+        font-size: 2.3rem;
+    }
+    .score-points {
+        font-size: 2.1rem;
+    }
+    .end-round-message {
+        font-size: 1.4rem;
+    }
+    button {
+        background-size: cover;
+        width: 125px;
+        height: 125px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 #1e98bd;
+    }
+    .button-text {
+        font-size: 1.5rem;
+    }
+    .credit {
+        font-size: 0.5rem;
+    }
+}
+
+@media (min-width: 675px) and (max-width: 849px) {
+    .banner {
+        font-size: 4.2rem;
+    }
+    .intro {
+        font-size: 1.7rem;
+    }
+    .end-game-message {
+        font-size: 1.7rem;
+    }
+    .score {
+        display: flex;
+        flex-direction: row;
+    }
+    .castle-container {
+        order: 2;
+    }
+    .player {
+        order: 1;
+        margin: 15px 0 15px 15px;
+        text-align: right;
+    }
+    .computer {
+        order: 3;
+        margin: 15px 15px 15px 0;
+        text-align: left;
+    }
+    .score-title {
+        font-size: 2.5rem;
+    }
+    .score-points {
+        font-size: 2.3rem;
+    }
+    .end-round-message {
+        font-size: 1.7rem;
+    }
+    button {
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 #1e98bd;
+    }
+    .button-text {
+        font-size: 1.75rem;
+    }
+    .credit {
+        font-size: 0.5rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .banner {
+        font-size: 5rem;
+    }
+    .intro {
+        font-size: 2rem;
+    }
+    .end-game-message {
+        font-size: 2rem;
+    }
+    .score {
+        display: flex;
+        flex-direction: row;
+    }
+    .castle-container {
+        order: 2;
+    }
+    .player {
+        order: 1;
+        margin: 15px 0 15px 15px;
+        text-align: right;
+    }
+    .computer {
+        order: 3;
+        margin: 15px 15px 15px 0;
+        text-align: left;
+    }
+    .score-title {
+        font-size: 2.8rem;
+    }
+    .score-points {
+        font-size: 2.6rem;
+    }
+    .end-round-message {
+        font-size: 2rem;
+    }
+    button {
+        background-size: cover;
+        width: 180px;
+        height: 180px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 #1e98bd;
+    }
+    .button-text {
+        font-size: 2rem;
+    }
+    .credit {
+        font-size: 0.5rem;
+    }
 }
